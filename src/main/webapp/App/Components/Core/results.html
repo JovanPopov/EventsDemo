@@ -1,0 +1,22 @@
+<div class="col-md-10 col-md-offset-1">
+ 	 <h1 align="center">
+         Events in {{city}}
+ 	 </h1><br><br>
+ 	 <div class="table-responsive">
+              <table class="table table-striped" style="border: 1px groove">
+                   <thead>
+                     <tr>                                      
+                     </tr>
+                   </thead>
+                   <tbody>
+                     <tr data-ng-repeat="event in events">
+                     	 <td><img src={{event.thumb_url}}  height="40"></img></td>
+                         <td>{{event.eventname}}</td>
+                         <td>{{event.start_time_display}}</td>
+                         <td><a href="https://www.facebook.com/{{event.event_id}}">Facebook page</a></td>
+                         <td><a href="https://www.facebook.com/{{event.owner_id}}">Owner's facebook page</a></td>
+                     </tr>                
+                   </tbody>
+             </table>                  
+  	 </div>
+</div>

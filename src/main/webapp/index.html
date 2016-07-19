@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<title>Events demo</title>
+<link href="st.css" rel="stylesheet">
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="row" ui-view="navbar"></div>
+	<div class="row" ui-view="main"></div>
+</div>
+
+<script src="App/app.module.js"></script>
+<script src="App/Components/Core/core.module.js"></script>
+<script src="App/Components/Core/core.route.js"></script>
+<script src="App/Components/Core/Navbar.controller.js"></script>
+<script src="App/Components/Core/register.controller.js"></script>
+<script src="App/Components/Core/city.controller.js"></script>
+<script src="App/Components/Core/results.controller.js"></script>
+
+</body>
+
+</html>

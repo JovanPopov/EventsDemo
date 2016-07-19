@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		
+		
+		<!-- <context:component-scan base-package="com.my.rest" /> -->
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+<!-- 	<mvc:view-controller path="/" view-name="hello"/> -->
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<mvc:annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+
+<!-- Configures the @Controller programming model -->
+	<!-- !!!!!!!!VAZNO!!!!! -->
+	<!-- Ovaj atribut validator MORA da se napise inace nece da radi sa hibarnate validacijom i custom porukama koje ce citaju iz resoruce bundle-a -->
+	<!-- Da bi radilo sa tomee+ mora se apache bval zameniti sa hibernate bval -->
+	<mvc:annotation-driven validator="validator" />
+	
+	
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+<!-- 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean> -->
+	
+	<mvc:resources mapping="/**" location="/" />
+	
+	<!-- JSR-303 validacija koja koristi nas custom messages-->
+	<beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+    	<beans:property name="validationMessageSource" ref="messageSource"/>
+ 	</beans:bean>
+	
+	
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.my.eventsdemo.controllers" />
+	
+<!-- 	<beans:import resource="classpath*:security-context.xml" />  -->
+</beans:beans>

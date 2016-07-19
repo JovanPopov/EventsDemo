@@ -1,0 +1,35 @@
+<div class='container'>
+<div class='row'>
+<div class='col-md-4 col-md-offset-4'>
+<form id='register' ng-submit='rc.register()' accept-charset='UTF-8' role="form">
+<fieldset >
+<legend>Register</legend>
+<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+<div class="form-group">
+<label for='name' >Your Full Name*: </label>
+<input type='text' name='name' id='name' maxlength="50" class="form-control" required ng-model='rc.user.name'/>
+</div>
+
+<div class="form-group">
+<label for='email' >Email Address*:</label>
+<input type='email' name='email' id='email' maxlength="50" class="form-control" required ng-model='rc.user.email'/>
+ </div>
+ 
+<div class="form-group">
+<label for='username' >UserName*:</label>
+<input type='text' name='username' id='username' maxlength="50" class="form-control" required ng-model='rc.user.username'/>
+ </div>
+ 
+<div class="form-group">
+<label for='password' >Password*:</label>
+<input type='password' name='password' id='password' maxlength="50" class="form-control" required ng-model='rc.user.password'/>
+</div>
+
+<input type='submit' name='Submit' value='Submit' />
+ 
+</fieldset>
+</form>
+</div>
+</div>
+</div>
