@@ -7,7 +7,7 @@
 			
 			<div>
 			<ul class="nav navbar-nav">
-				<li><a ui-sref='main.city'>Choose city</a></li>
+				<li  ng-if="nvc.user"><a ui-sref='main.city'>Choose a city</a></li>
 				
 			
 				
@@ -17,8 +17,8 @@
 			<ul class="nav navbar-nav navbar-right">
 			<li><a ui-sref='main.register'>Register</a></li>
 			<li ng-if="nvc.user"><a>Current user: {{nvc.user}}</a></li>
-			<li ng-if="nvc.user"><a href="/eventsdemo/logout">logout</a></li>
-			<li ng-if="!nvc.user"><a href="/eventsdemo/spring_security_login">login</a></li>
+			<li ng-if="nvc.user"><a href="/eventsdemo/logout">Logout</a></li>
+			<li ng-if="!nvc.user"><a href="/eventsdemo/spring_security_login">Login</a></li>
 			</ul>
 			
 			

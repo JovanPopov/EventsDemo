@@ -11,12 +11,13 @@
 		$http.post('http://localhost:8080/eventsdemo/api/register', data)
         .then(
                 function(response){
+                	alert("Account created, activation mail has been sent!");
                 	 $location.path('main.home');
                     return response.data;
                    
                 }, 
                 function(errResponse){
-                    console.error('Error while registering');
+                   alert('Error: Username or email are allready in use!');
                     return $q.reject(errResponse);
                 }
         );

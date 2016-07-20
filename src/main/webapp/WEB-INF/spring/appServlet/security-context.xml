@@ -54,4 +54,7 @@
 <!-- <beans:bean id="userDetailsService" class="com.my.rest.service.UserDetailServiceImpl"></beans:bean>
   -->
  
+ 
+   
+ 
 </beans:beans>

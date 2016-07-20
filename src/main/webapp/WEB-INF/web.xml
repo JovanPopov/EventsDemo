@@ -4,7 +4,8 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/spring/root-context.xml,
 						 /WEB-INF/spring/appServlet/security-context.xml,
-						 /WEB-INF/spring/appServlet/hibernate-context.xml</param-value>
+						 /WEB-INF/spring/appServlet/hibernate-context.xml
+						  /WEB-INF/spring/appServlet/buisness-config.xml</param-value>
   </context-param>
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

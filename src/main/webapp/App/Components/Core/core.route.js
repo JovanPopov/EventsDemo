@@ -42,6 +42,20 @@
 							}
 						}
 					})
+					
+					
+						.state('main.activated',{
+					url: '/activated',
+						views:{
+							'main@':{
+								templateUrl:'App/Components/Core/activated.html',
+									controller: 'NavbarController',
+									controllerAs: 'nvc'
+							}
+						}
+					})
+					
+					
 
 							.state('main.city',{
 					url: '/city',params: {
