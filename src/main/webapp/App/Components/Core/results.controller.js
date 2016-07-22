@@ -4,33 +4,12 @@
 	
 	function resultscontroller($location,$scope, $http, $state, $stateParams,$cookies){
 		var cc=this;
+		
 		  $scope.city = $stateParams.city;
 		  $scope.state = $stateParams.state;
 		  $scope.country = $stateParams.country;
-		 
-		  if($scope.city != '')
-			  $cookies.put("city", $stateParams.city);
-		  if($scope.state != '')
-			  $cookies.put("state", $stateParams.state);
-		  if($scope.country != '')
-			  $cookies.put("country", $stateParams.country);
-		  
-		  
-	      console.log('state2 params:', $stateParams);
-	          
-	         if($scope.city == '')
-	        	 $scope.city= $cookies.get("city");
-		 
-	         if($scope.state == '')
-	        	 $scope.state= $cookies.get("state");
-		 
-	         if($scope.country == '')
-	        	 $scope.country= $cookies.get("country");
-		 
-	         console.log('cookie city:', $scope.city);
-	         console.log('cookie state:', $scope.state);
-	         console.log('cookie country:', $scope.country);
-	         
+		  $scope.page = $stateParams.page;
+
 	         
 	         (function(val) {
 	 		    return $http.get('http://localhost:8080/eventsdemo/api/eventsincity/', {
@@ -48,7 +27,18 @@
 	 		  })();
 	         
 	         
+	         $scope.myMethod = function(newPageNumber, oldPageNumber){
+	        	 $scope.yearIsChanged(newPageNumber);
+	         };
 	         
+	         $scope.yearIsChanged = function (newPageNumber) {
+	            /* $location.url('/results?city='+ $scope.city + '&state=' + $scope.state + '&country=' + $scope.country + '&page=' + newPageNumber);*/
+	        	 $location.search('city', $scope.city);
+	        	 $location.search( 'state', $scope.state);
+	        	 $location.search( 'country', $scope.country);
+	        	 $location.search( 'page', $scope.page); 
+	        	 
+	         };   
 		  
 	}
 

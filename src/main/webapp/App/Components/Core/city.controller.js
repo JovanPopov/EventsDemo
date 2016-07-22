@@ -35,7 +35,7 @@
 			    console.log('model', $model);
 			    console.log('label', $label);
 			    
-			    $state.go('main.results', { city : $model.city , state: $model.region_code, country:$model.country });
+			    $state.go('main.results', { city : $model.city , state: $model.region_code, country:$model.country, page:1 });
 			    console.log('state1 params:', $stateParams);
 			};
 		  

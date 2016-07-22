@@ -13,9 +13,9 @@
    
 	<context:component-scan base-package="com.my.eventsdemo" />
 		
-		
+		<global-method-security pre-post-annotations="enabled"/>
     <http use-expressions="true">
-      <!--   <intercept-url pattern="/**" access="isAuthenticated()"/> --> <!-- this means all URL in this app will be checked if user is authenticated -->
+        <!--  <intercept-url pattern="/api/**" access="isAuthenticated()"/> -->  <!-- this means all URL in this app will be checked if user is authenticated -->
         <form-login/> <!-- We will just use the built-in form login page in Spring -->
         <logout logout-url="/logout" logout-success-url="/index.html"/> <!-- the logout url we will use in JSP -->
     </http>

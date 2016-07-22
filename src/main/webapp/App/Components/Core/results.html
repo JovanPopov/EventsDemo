@@ -9,7 +9,7 @@
                      </tr>
                    </thead>
                    <tbody>
-                     <tr data-ng-repeat="event in events">
+                     <tr dir-paginate="event in events | itemsPerPage: 10 " current-page='page' >
                      	 <td><img src={{event.thumb_url}}  height="40"></img></td>
                          <td>{{event.eventname}}</td>
                          <td>{{event.start_time_display}}</td>
@@ -17,6 +17,8 @@
                          <td><a href="https://www.facebook.com/{{event.owner_id}}">Owner's facebook page</a></td>
                      </tr>                
                    </tbody>
-             </table>                  
+             </table>
+             
+             <dir-pagination-controls on-page-change="myMethod(newPageNumber, oldPageNumber)"></dir-pagination-controls>                  
   	 </div>
 </div>

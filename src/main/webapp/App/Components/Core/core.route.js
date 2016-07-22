@@ -63,6 +63,10 @@
 				        state: '',
 				        country: ''
 				    },
+				    data: {
+				        authorization: true,
+				        redirectTo: 'main.home'
+				      },
 						views:{
 							'main@':{
 								templateUrl:'App/Components/Core/Search.html',
@@ -74,11 +78,12 @@
 					
 					
 							.state('main.results',{
-					url: '/results',params: {
-				        city: '',
-				        state: '',
-				        country: ''
-				    },
+					url: '/results?city&state&country&page',
+				    data: {
+				        authorization: true,
+				        redirectTo: 'main.home'
+				      },
+				      reloadOnSearch: false,
 						views:{
 							'main@':{
 								templateUrl:'App/Components/Core/results.html',
@@ -86,7 +91,7 @@
 								controllerAs: 'rc'
 							}
 						}
-					})
+					});
 
 	}
 

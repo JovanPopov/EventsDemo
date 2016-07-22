@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
@@ -99,7 +100,7 @@ public class HomeController {
 
 	
 
-	
+	@PreAuthorize("isAuthenticated()")
 	@RequestMapping(value = "/api/citySuggestions/{query}", method = RequestMethod.GET)
 	public @ResponseBody JSONArray getCities(@PathVariable String query) {
 		
@@ -142,6 +143,7 @@ public class HomeController {
 		return arrayObj;
 	}
 	
+	@PreAuthorize("isAuthenticated()")
 	@RequestMapping(value = "/api/eventsincity", method = RequestMethod.GET)
 	public @ResponseBody JSONArray getEventsInCity(@RequestParam Map<String,String> requestParams) {
 		
