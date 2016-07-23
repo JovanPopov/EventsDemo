@@ -82,7 +82,7 @@ public class RegisterController {
 	 
 	        //Send a composed mail
 	        mailer.sendMail("uddmejl1@gmail.com", usr.getMail(), "Account activation", " Hello "+ usr.getName() + " .You can activate your account by clicking the following link:"+
-	        		"http://localhost:8080/eventsdemo/api/activate/"+usr.getId()	        		
+	        		"http://188.2.87.248:5000/eventsdemo/api/activate/"+usr.getId()	        		
 	        		);
 		
 		response="Account created, activation email has been sent!";
@@ -101,7 +101,7 @@ public class RegisterController {
 		u.setStatus(UserStatus.ACTIVE);
 		userDao.editUser(u);
 		
-		 URI uri = new URI("http://localhost:8080/eventsdemo/#/activated");
+		 URI uri = new URI("http://188.2.87.248:5000/eventsdemo/#/activated");
 		    HttpHeaders httpHeaders = new HttpHeaders();
 		    httpHeaders.setLocation(uri);
 	      

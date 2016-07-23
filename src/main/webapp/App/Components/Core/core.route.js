@@ -78,7 +78,7 @@
 					
 					
 							.state('main.results',{
-					url: '/results?city&state&country&page',
+					url: '/results?city&state&country&page&pageSize&q',
 				    data: {
 				        authorization: true,
 				        redirectTo: 'main.home'

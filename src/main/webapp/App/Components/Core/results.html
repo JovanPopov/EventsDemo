@@ -2,6 +2,21 @@
  	 <h1 align="center">
          Events in {{city}}
  	 </h1><br><br>
+ 	 
+ 	  <div class="row">
+              <div class="col-xs-2 col-xs-offset-6">
+                <h3>Filter results:</h3>
+              </div>
+              <div class="col-xs-2">
+                <label for="search">Search:</label>
+                <input ng-model="q" id="search" class="form-control" placeholder="Filter text" ng-change="updateParameters()" ng-model-options="{debounce:500}">
+              </div>
+              <div class="col-xs-2">
+                <label for="search">Items per page:</label>
+                <input type="number" min="1" max="100" class="form-control" ng-model="pageSize" ng-change="updateParameters()" ng-model-options="{debounce:500}">
+              </div>
+            </div>
+            <br>
  	 <div class="table-responsive">
               <table class="table table-striped" style="border: 1px groove">
                    <thead>
@@ -9,9 +24,10 @@
                      </tr>
                    </thead>
                    <tbody>
-                     <tr dir-paginate="event in events | itemsPerPage: 10 " current-page='page' >
+                     <tr dir-paginate="event in events  | filter:q | itemsPerPage: pageSize " current-page='page' >
                      	 <td><img src={{event.thumb_url}}  height="40"></img></td>
                          <td>{{event.eventname}}</td>
+                         <td>{{event.location}}</td>
                          <td>{{event.start_time_display}}</td>
                          <td><a href="https://www.facebook.com/{{event.event_id}}">Facebook page</a></td>
                          <td><a href="https://www.facebook.com/{{event.owner_id}}">Owner's facebook page</a></td>

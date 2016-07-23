@@ -8,7 +8,7 @@
 		
 	rc.register= function(){
 		  var data = JSON.stringify(rc.user);
-		$http.post('http://localhost:8080/eventsdemo/api/register', data)
+		$http.post('http://188.2.87.248:5000/eventsdemo/api/register', data)
         .then(
                 function(response){
                 	alert("Account created, activation mail has been sent!");

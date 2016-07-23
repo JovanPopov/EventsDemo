@@ -100,7 +100,7 @@ public class HomeController {
 
 	
 
-	@PreAuthorize("isAuthenticated()")
+/*	@PreAuthorize("isAuthenticated()")*/
 	@RequestMapping(value = "/api/citySuggestions/{query}", method = RequestMethod.GET)
 	public @ResponseBody JSONArray getCities(@PathVariable String query) {
 		
@@ -143,7 +143,7 @@ public class HomeController {
 		return arrayObj;
 	}
 	
-	@PreAuthorize("isAuthenticated()")
+	/*@PreAuthorize("isAuthenticated()")*/
 	@RequestMapping(value = "/api/eventsincity", method = RequestMethod.GET)
 	public @ResponseBody JSONArray getEventsInCity(@RequestParam Map<String,String> requestParams) {
 		
