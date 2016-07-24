@@ -22,6 +22,7 @@
 	 		        }
 	 		      }).success(function(data, status) { 
 	 		            $scope.events = data;
+	 		            console.log(data);
 	 				}).error(function(data, status) {
 	 					alert("Error while getting events for this city!");
 	 	            });

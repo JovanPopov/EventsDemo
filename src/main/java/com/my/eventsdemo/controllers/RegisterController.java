@@ -42,11 +42,11 @@ public class RegisterController {
 		boolean t=false;
 		List<User> users=userDao.getAllUsers();
 		for (User u : users) {
-			if(u.getUsername().equals(user.getUsername())){
+			if(u.getUsername().toLowerCase().equals(user.getUsername().toLowerCase())){
 				t=true;
 				response="Error: username allready exists!";
 				break;				
-			}else if(u.getMail().equals(user.getEmail())){
+			}else if(u.getMail().toLowerCase().equals(user.getEmail().toLowerCase())){
 				t=true;
 				response="Error: email allready in user!";
 				break;	
@@ -81,7 +81,7 @@ public class RegisterController {
 	        com.my.eventsdemo.util.SendMail mailer = (com.my.eventsdemo.util.SendMail) context.getBean("sendMail");
 	 
 	        //Send a composed mail
-	        mailer.sendMail("uddmejl1@gmail.com", usr.getMail(), "Account activation", " Hello "+ usr.getName() + " .You can activate your account by clicking the following link:"+
+	        mailer.sendMail("uddmejl1@gmail.com", usr.getMail(), "Account activation", " Hello "+ usr.getName() + ". You can activate your account by clicking the following link: "+
 	        		"http://188.2.87.248:5000/eventsdemo/api/activate/"+usr.getId()	        		
 	        		);
 		

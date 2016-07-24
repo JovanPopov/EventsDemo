@@ -6,7 +6,6 @@ function navbarController($http,$state,Authorization,$cookies){
 	var nvc=this;
 	nvc.user=$cookies.get("auth");
 	
-	  console.log("reload navbar controller");
 	   $http({method: "GET", url: "http://188.2.87.248:5000/eventsdemo/api/info"})
 	   .success(function(data){ 
 	       

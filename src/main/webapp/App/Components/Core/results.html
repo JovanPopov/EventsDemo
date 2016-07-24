@@ -1,7 +1,7 @@
 <div class="col-md-10 col-md-offset-1">
- 	 <h1 align="center">
+ 	 <h1 class="mine" align="center">
          Events in {{city}}
- 	 </h1><br><br>
+ 	 </h1><br>
  	 
  	  <div class="row">
               <div class="col-md-2 col-md-offset-6 col-xs-4">
@@ -17,20 +17,20 @@
               </div>
             </div>
             <br>
- 	 <div class="table-responsive">
-              <table class="table table-striped" style="border: 1px groove">
+ 	 <div>
+              <table>
                    <thead>
-                     <tr>                                      
+                     <tr> 
+                                                        
                      </tr>
                    </thead>
                    <tbody>
                      <tr dir-paginate="event in events  | filter:q | itemsPerPage: pageSize " current-page='page' >
-                     	 <td><img src={{event.thumb_url}}  height="40"></img></td>
-                         <td>{{event.eventname}}</td>
+                         <td> <img src={{event.thumb_url}}  height="40"></img>   {{event.eventname}}</td>
                          <td>{{event.location}}</td>
                          <td>{{event.start_time_display}}</td>
-                         <td><a href="https://www.facebook.com/{{event.event_id}}">Facebook page</a></td>
-                         <td><a href="https://www.facebook.com/{{event.owner_id}}">Owner's facebook page</a></td>
+                         <td><a href="https://www.facebook.com/{{event.event_id}}">Facebook page</a>  <a href="https://www.facebook.com/{{event.owner_id}}">Owner's page</td>
+                        
                      </tr>                
                    </tbody>
              </table>

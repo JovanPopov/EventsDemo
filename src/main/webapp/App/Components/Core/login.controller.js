@@ -16,8 +16,9 @@ var lc=this;
 			        } ).then(function(data) {
 			        	$cookies.put("auth", lc.user.username);
 				    	 Authorization.go();
-				    	  if(Authorization.memorizedState){   	
-				    	    	$location.url(Authorization.memorizedState);
+				    	  if($cookies.get("memory")){   	
+				    	    	$location.url($cookies.get("memory"));
+				    	    	$cookies.remove("memory");
 				    	    	
 				    	  	}else{
 				    	  
