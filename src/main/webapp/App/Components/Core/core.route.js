@@ -28,7 +28,17 @@
 					})
 
 
-
+					.state('main.login',{
+					url: '/login',
+						views:{
+							'main@':{
+								templateUrl:'App/Components/Core/login.html',
+									controller: 'LoginController',
+									controllerAs: 'lc'
+							}
+						}
+					})
+					
 
 
 					
@@ -65,7 +75,8 @@
 				    },
 				    data: {
 				        authorization: true,
-				        redirectTo: 'main.home'
+				        redirectTo: 'main.login',
+				        memory: true
 				      },
 						views:{
 							'main@':{
@@ -81,7 +92,8 @@
 					url: '/results?city&state&country&page&pageSize&q',
 				    data: {
 				        authorization: true,
-				        redirectTo: 'main.home'
+				        redirectTo: 'main.login',
+				        memory: true
 				      },
 				      reloadOnSearch: false,
 						views:{

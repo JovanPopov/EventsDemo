@@ -24,7 +24,7 @@
 			
 			
 			<ul class="nav navbar-nav">
-				<li  ng-if="nvc.user"><a ui-sref='main.city'>Choose a city</a></li>
+				<li  ng-if="nvc.userf()"><a ui-sref='main.city'>Choose a city</a></li>
 				
 			
 				
@@ -32,10 +32,10 @@
 			
 				
 			<ul class="nav navbar-nav navbar-right">
-			<li><a ui-sref='main.register'>Register</a></li>
-			<li ng-if="nvc.user"><a>Current user: {{nvc.user}}</a></li>
-			<li ng-if="nvc.user"><a href="/eventsdemo/logout" ng-click="nvc.logout()">Logout</a></li>
-			<li ng-if="!nvc.user"><a href="/eventsdemo/spring_security_login">Login</a></li>
+			<li ng-if="!nvc.userf()"><a ui-sref='main.register'>Register</a></li>
+			<li ng-if="nvc.userf()"><a>Current user:  <strong>{{nvc.userf()}}</strong></a></li>
+			<li ng-if="nvc.userf()"><a ng-click="nvc.logout()">Logout</a></li>
+			<li ng-if="!nvc.userf()"><a ui-sref='main.login'>Login</a></li>
 			</ul>
 			
           

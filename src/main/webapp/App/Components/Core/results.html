@@ -4,15 +4,15 @@
  	 </h1><br><br>
  	 
  	  <div class="row">
-              <div class="col-xs-2 col-xs-offset-6">
-                <h3>Filter results:</h3>
+              <div class="col-md-2 col-md-offset-6 col-xs-4">
+                <h4>Filter results:</h4>
               </div>
-              <div class="col-xs-2">
+              <div class="col-xs-5 col-md-2">
                 <label for="search">Search:</label>
                 <input ng-model="q" id="search" class="form-control" placeholder="Filter text" ng-change="updateParameters()" ng-model-options="{debounce:500}">
               </div>
-              <div class="col-xs-2">
-                <label for="search">Items per page:</label>
+              <div class="col-xs-3 col-md-2">
+                <label for="search">Items:</label>
                 <input type="number" min="1" max="100" class="form-control" ng-model="pageSize" ng-change="updateParameters()" ng-model-options="{debounce:500}">
               </div>
             </div>

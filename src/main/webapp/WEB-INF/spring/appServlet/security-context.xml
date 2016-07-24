@@ -12,11 +12,21 @@
     
    
 	<context:component-scan base-package="com.my.eventsdemo" />
+		<beans:bean id="successLoginHandler" class="com.my.eventsdemo.security.AuthSuccess" />
+		<beans:bean id="failureLoginHandler" class="com.my.eventsdemo.security.AuthFailure" />
+		<beans:bean id="EntryPointUnauthorizedHandler" class="com.my.eventsdemo.security.EntryPointUnauthorizedHandler" />
 		
 		<global-method-security pre-post-annotations="enabled"/>
-    <http use-expressions="true">
+    <http use-expressions="true" disable-url-rewriting="true" entry-point-ref="EntryPointUnauthorizedHandler">
         <!--  <intercept-url pattern="/api/**" access="isAuthenticated()"/> -->  <!-- this means all URL in this app will be checked if user is authenticated -->
-        <form-login/> <!-- We will just use the built-in form login page in Spring -->
+        <form-login login-page='/login.html'
+          login-processing-url="/j_spring_security_check"
+  		username-parameter="username"
+ 		 password-parameter="password"
+ 		 authentication-success-handler-ref="successLoginHandler"
+ 		 authentication-failure-handler-ref="failureLoginHandler"
+ 		 
+ 		 /> <!-- We will just use the built-in form login page in Spring -->
         <logout logout-url="/logout" logout-success-url="/index.html"/> <!-- the logout url we will use in JSP -->
     </http>
     

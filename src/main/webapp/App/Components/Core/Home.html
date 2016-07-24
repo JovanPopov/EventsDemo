@@ -6,10 +6,10 @@
 	</br></br>
 	
 	
-			<li ng-if="nvc.user"><a ui-sref='main.city'><font size="4">Search for events in a city</font></a></li>
+			<li ng-if="nvc.userf()"><a ui-sref='main.city'><font size="4">Search for events in a city</font></a></li>
 	
-			<li ng-if="!nvc.user"><a href="/eventsdemo/spring_security_login"><font size="4">Login</font></a></li>
-			<li ng-if="!nvc.user"><a ui-sref='main.register'><font size="4">Register</font></a></li>
+			<li ng-if="!nvc.userf()"><a ui-sref='main.login'><font size="4">Login</font></a></li>
+			<li ng-if="!nvc.userf()"><a ui-sref='main.register'><font size="4">Register</font></a></li>
 			
 			
 			

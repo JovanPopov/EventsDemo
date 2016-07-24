@@ -22,7 +22,6 @@
 	 		        }
 	 		      }).success(function(data, status) { 
 	 		            $scope.events = data;
-	 		           console.log('result:', $scope.events);
 	 				}).error(function(data, status) {
 	 					alert("Error while getting events for this city!");
 	 	            });
@@ -31,7 +30,6 @@
 	         
 	         $scope.myMethod = function(newPageNumber, oldPageNumber){
 	        	 $scope.yearIsChanged(newPageNumber);
-	        	 console.log('page:', newPageNumber);
 	         };
 	         
 	         $scope.yearIsChanged = function (newPageNumber) {
