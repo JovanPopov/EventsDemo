@@ -48,6 +48,7 @@ public class UserDaoImpl implements UserDao{
 		return (User) criteria.uniqueResult();
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAllUsers() {
 		return session.getCurrentSession().createQuery("from User").list();

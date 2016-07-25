@@ -38,17 +38,14 @@ public class RegisterController {
 	public @ResponseBody ResponseEntity<User> register(@RequestBody UserRegister user) throws NoSuchAlgorithmException {
 		logger.info("registering" + user.getName());
 		User usr=null;
-		String response="";
 		boolean t=false;
 		List<User> users=userDao.getAllUsers();
 		for (User u : users) {
 			if(u.getUsername().toLowerCase().equals(user.getUsername().toLowerCase())){
 				t=true;
-				response="Error: username allready exists!";
 				break;				
 			}else if(u.getMail().toLowerCase().equals(user.getEmail().toLowerCase())){
 				t=true;
-				response="Error: email allready in user!";
 				break;	
 			}
 			
@@ -84,8 +81,6 @@ public class RegisterController {
 	        mailer.sendMail("uddmejl1@gmail.com", usr.getMail(), "Account activation", " Hello "+ usr.getName() + ". You can activate your account by clicking the following link: "+
 	        		"http://188.2.87.248:5000/eventsdemo/api/activate/"+usr.getId()	        		
 	        		);
-		
-		response="Account created, activation email has been sent!";
 		
 		}else{
 			return new ResponseEntity<User>(usr, HttpStatus.CONFLICT);

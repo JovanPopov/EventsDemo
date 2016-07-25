@@ -1,11 +1,8 @@
 package com.my.eventsdemo.controllers;
 
 import java.net.URI;
-import java.util.List;
 import java.util.Map;
 
-import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -20,22 +17,16 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.my.eventsdemo.dao.UserDao;
-import com.my.eventsdemo.entity.UserStatus;
-import com.my.eventsdemo.model.UserRegister;
+
 
 /**
  * Handles requests for the application home page.
@@ -144,6 +135,7 @@ public class HomeController {
 	}
 	
 	/*@PreAuthorize("isAuthenticated()")*/
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/api/eventsincity", method = RequestMethod.GET)
 	public @ResponseBody JSONArray getEventsInCity(@RequestParam Map<String,String> requestParams) {
 		

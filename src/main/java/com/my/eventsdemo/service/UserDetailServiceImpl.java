@@ -3,8 +3,7 @@ package com.my.eventsdemo.service;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
@@ -14,11 +13,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.my.eventsdemo.controllers.HomeController;
 import com.my.eventsdemo.dao.UserDao;
 import com.my.eventsdemo.entity.User;
 import com.my.eventsdemo.entity.UserStatus;
 
+@SuppressWarnings("deprecation")
 @Service("userDetailsService")
 public class UserDetailServiceImpl implements UserDetailsService{
 

@@ -1,12 +1,9 @@
 package com.my.eventsdemo.security;
 
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
+
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
-
-import net.minidev.json.JSONObject;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
